@@ -18,28 +18,40 @@ public class BasketTest {
 
   @Test
   public void canGetItemCount() {
-    assertEquals(0, basket.getItemCount());
+    assertEquals(0, basket.getTotalItemCount());
   }
 
   @Test
   public void canAddItems() {
-    
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(tinOfBeans);
+    assertEquals(2, basket.getTotalItemCount());
   } 
 
   @Test
   public void canRemoveOneItem() {
-    
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(tinOfBeans);
+    assertEquals(2, basket.getTotalItemCount());
+    basket.removeOneItemFromBasket(toothbrush);
+    assertEquals(1, basket.getTotalItemCount());
   }
 
   @Test
   public void canRemoveAllItems() {
-    
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(tinOfBeans);
+    basket.removeAllItemsFromBasket();
+    assertEquals(0, basket.getTotalItemCount());
   }
 
-  @Test
-  public void canApplyBogofDiscount() {
-    
-  }
+  // @Test
+  // public void canApplyBogofDiscount() {
+  //   basket.addItemToBasket(toothbrush);
+  //   basket.addItemToBasket(tinOfBeans);
+  //   basket.addItemToBasket(tinOfBeans);
+  //   assertEquals(2, basket.getValueOfBogofDiscount());
+  // }
 
   @Test
   public void canCalculateTotalCostOfBasket() {

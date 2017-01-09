@@ -39,6 +39,7 @@ public class ItemTest {
   @Test
   public void canHaveDiscount() {
     assertEquals(true, tinOfBeans.hasDiscount());
+    assertEquals(false, toothbrush.hasDiscount());
   }
 
   @Test
