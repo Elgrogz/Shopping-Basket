@@ -5,9 +5,13 @@ import shopping_basket.*;
 
 public class BasketTest {
 
+  Item toothbrush;
+  Item tinOfBeans;
+
   @Before
   public void before() {
-
+    toothbrush = new Item("toothbrush", 2, false);
+    tinOfBeans = new Item("tin of beans", 3, true);
   }
 
   @Test
@@ -34,5 +38,5 @@ public class BasketTest {
   public void canCalculateTotalCostOfBasket() {
     
   }
-  
+
 }
