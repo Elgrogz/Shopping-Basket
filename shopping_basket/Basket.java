@@ -8,7 +8,15 @@ public class Basket {
   
 
   public Basket(){
-    this.items = new ArrayList<>();
+    this.items = new ArrayList<Item>();
     this.totalValue = 0;
   } 
+
+  public ArrayList<Item> getItems() {
+    return this.items;
+  }
+
+  public int getItemCount() {
+    return items.size();
+  }
 }

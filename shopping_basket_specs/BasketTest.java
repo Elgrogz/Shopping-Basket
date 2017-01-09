@@ -7,11 +7,18 @@ public class BasketTest {
 
   Item toothbrush;
   Item tinOfBeans;
+  Basket basket;
 
   @Before
   public void before() {
     toothbrush = new Item("toothbrush", 2, false);
     tinOfBeans = new Item("tin of beans", 3, true);
+    basket = new Basket();
+  }
+
+  @Test
+  public void canGetItemCount() {
+    assertEquals(0, basket.getItemCount());
   }
 
   @Test
