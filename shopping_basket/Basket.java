@@ -67,12 +67,14 @@ public class Basket {
 
   //   }
 
-
-    
   // }
 
-  public void getBasketValue() {
-
+  public int getBasketTotalValue() {
+    int totalValue = 0;
+    for (Item item : items) {
+      totalValue += item.getCost();
+    }
+    return totalValue;
   }
 
 }

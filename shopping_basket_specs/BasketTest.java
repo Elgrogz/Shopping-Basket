@@ -55,7 +55,10 @@ public class BasketTest {
 
   @Test
   public void canCalculateTotalCostOfBasket() {
-    
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(tinOfBeans);
+    assertEquals(7, basket.getBasketTotalValue());
   }
 
 }
