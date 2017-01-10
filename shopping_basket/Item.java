@@ -1,13 +1,13 @@
 package shopping_basket;
 
-public class Item {
+public abstract class Item {
 
   String name;
   int cost;
   boolean hasBogofDiscount;
   
 
-  public Item(String name, int cost, boolean hasBogofDiscount){
+  public Item() {
     this.name = name;
     this.cost = cost;
     this.hasBogofDiscount = hasBogofDiscount;

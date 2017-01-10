@@ -5,13 +5,13 @@ import shopping_basket.*;
 
 public class ItemTest {
 
-  Item toothbrush;
-  Item tinOfBeans;
+  Toothbrush toothbrush;
+  TinOfBeans tinOfBeans;
 
   @Before
   public void before() {
-    toothbrush = new Item("toothbrush", 2, false);
-    tinOfBeans = new Item("tin of beans", 3, true);
+    toothbrush = new Toothbrush();
+    tinOfBeans = new TinOfBeans();
   }
 
   @Test

@@ -43,33 +43,33 @@ public class Basket {
     items.clear();
   }
 
-  public void getValueOfBogofDiscount() {
-    HashMap<Item, Integer> bogofItems = new HashMap<>();
-    for (Item item : items) {
-      if (!bogofItems.containsKey(item) && item.hasDiscount()) {
-        bogofItems.put(item, 1);
-      }
-      else {
-        bogofItems.put(item, bogofItems.get(item) + 1);
-      }
+  // public void getValueOfBogofDiscount() {
+  //   HashMap<Item, Integer> bogofItems = new HashMap<>();
+  //   for (Item item : items) {
+  //     if (!bogofItems.containsKey(item) && item.hasDiscount()) {
+  //       bogofItems.put(item, 1);
+  //     }
+  //     else {
+  //       bogofItems.put(item, bogofItems.get(item) + 1);
+  //     }
 
-      for (Item key : bogofItems.keySet()) {
-        if (bogofItems.get(key) < 2) {
-          bogofItems.remove(key);
-        }
-      }
+  //     for (Item key : bogofItems.keySet()) {
+  //       if (bogofItems.get(key) < 2) {
+  //         bogofItems.remove(key);
+  //       }
+  //     }
 
-      for (Item key : bogofItems.keySet()) {
-        if (bogofItems.get(key) % 2 == 1) {
-          bogofItems.put(key, bogofItems.get(key) - 1);
-        }
-      }
+  //     for (Item key : bogofItems.keySet()) {
+  //       if (bogofItems.get(key) % 2 == 1) {
+  //         bogofItems.put(key, bogofItems.get(key) - 1);
+  //       }
+  //     }
 
-    }
+  //   }
 
 
     
-  }
+  // }
 
   public void getBasketValue() {
 
