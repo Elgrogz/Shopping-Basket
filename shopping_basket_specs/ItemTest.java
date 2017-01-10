@@ -27,13 +27,13 @@ public class ItemTest {
   
   @Test
   public void canGetCost() {
-    assertEquals(2, toothbrush.getCost());
+    assertEquals(2.0, toothbrush.getCost(), 0.1);
   } 
 
   @Test
   public void canSetCost() {
-    toothbrush.setCost(4);
-    assertEquals(4, toothbrush.getCost());
+    toothbrush.setCost(4.0);
+    assertEquals(4.0, toothbrush.getCost(), 0.1);
   }
 
   @Test

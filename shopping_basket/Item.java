@@ -3,7 +3,7 @@ package shopping_basket;
 public abstract class Item {
 
   String name;
-  int cost;
+  double cost;
   boolean hasBogofDiscount;
   
 
@@ -21,11 +21,11 @@ public abstract class Item {
     this.name = name;
   }
 
-  public int getCost() {
+  public double getCost() {
     return this.cost;
   }
 
-  public void setCost(int cost) {
+  public void setCost(double cost) {
     this.cost = cost;
   }
 

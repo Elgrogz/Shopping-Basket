@@ -4,7 +4,7 @@ import java.util.*;
 public class Basket {
 
   ArrayList<Item> items;
-  int totalValue;
+  double totalValue;
   
 
   public Basket(){
@@ -43,37 +43,46 @@ public class Basket {
     items.clear();
   }
 
-  // public void getValueOfBogofDiscount() {
-  //   HashMap<Item, Integer> bogofItems = new HashMap<>();
-  //   for (Item item : items) {
-  //     if (!bogofItems.containsKey(item) && item.hasDiscount()) {
-  //       bogofItems.put(item, 1);
-  //     }
-  //     else {
-  //       bogofItems.put(item, bogofItems.get(item) + 1);
-  //     }
+  public double getValueOfBogofDiscount() {
+    double amountDeducted = 0;
 
-  //     for (Item key : bogofItems.keySet()) {
-  //       if (bogofItems.get(key) < 2) {
-  //         bogofItems.remove(key);
-  //       }
-  //     }
+    HashMap<Item, Integer> bogofItems = new HashMap<>();
+    for (Item item : items) {
+      if (!bogofItems.containsKey(item) && item.hasDiscount()) {
+        bogofItems.put(item, 1);
+      }
+      else {
+        bogofItems.put(item, bogofItems.get(item) + 1);
+      }
+    }
 
-  //     for (Item key : bogofItems.keySet()) {
-  //       if (bogofItems.get(key) % 2 == 1) {
-  //         bogofItems.put(key, bogofItems.get(key) - 1);
-  //       }
-  //     }
+    for (Item key : bogofItems.keySet()) {
+      if (bogofItems.get(key) < 2) {
+        bogofItems.remove(key);
+      }
+    }
 
-  //   }
+    for (Item key : bogofItems.keySet()) {
+      if (bogofItems.get(key) % 2 == 1) {
+        bogofItems.put(key, bogofItems.get(key) - 1);
+      }
+    }
 
-  // }
+    for (Item key : bogofItems.keySet()) {
+      amountDeducted += ((key.getCost() / 2) * bogofItems.get(key)); 
+    }
 
-  public int getBasketTotalValue() {
-    int totalValue = 0;
+    return amountDeducted;
+  }
+
+  public double getBasketTotalValue() {
+    double totalValue = 0;
     for (Item item : items) {
       totalValue += item.getCost();
     }
+
+    totalValue -= getValueOfBogofDiscount();
+
     return totalValue;
   }
 

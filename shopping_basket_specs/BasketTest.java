@@ -45,20 +45,22 @@ public class BasketTest {
     assertEquals(0, basket.getTotalItemCount());
   }
 
-  // @Test
-  // public void canApplyBogofDiscount() {
-  //   basket.addItemToBasket(toothbrush);
-  //   basket.addItemToBasket(tinOfBeans);
-  //   basket.addItemToBasket(tinOfBeans);
-  //   assertEquals(2, basket.getValueOfBogofDiscount());
-  // }
+  @Test
+  public void canApplyBogofDiscount() {
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    assertEquals(3.0, basket.getValueOfBogofDiscount(), 0.1);
+  }
 
   @Test
   public void canCalculateTotalCostOfBasket() {
     basket.addItemToBasket(toothbrush);
     basket.addItemToBasket(toothbrush);
     basket.addItemToBasket(tinOfBeans);
-    assertEquals(7, basket.getBasketTotalValue());
+    assertEquals(9.0, basket.getBasketTotalValue(), 0.1);
   }
 
 }
