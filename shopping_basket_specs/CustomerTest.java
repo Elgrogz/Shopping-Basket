@@ -58,18 +58,11 @@ public class CustomerTest {
   }
 
   @Test
-  public void canDeductFunds() {
-    
+  public void canCheckout() {
+    customer.addItemToBasket(toothbrush);
+    customer.addItemToBasket(tinOfBeans);
+    customer.checkout();
+    assertEquals(95, customer.getFunds());
+    assertEquals(0, customer.getItemCountInBasket());
   } 
-
-  @Test
-  public void canHaveDiscountCard() {
-    
-  } 
-
-  @Test
-  public void canCalculateLoyaltyCardDiscount() {
-    
-  } 
-
 }

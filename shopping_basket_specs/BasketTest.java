@@ -41,7 +41,7 @@ public class BasketTest {
   public void canRemoveAllItems() {
     basket.addItemToBasket(toothbrush);
     basket.addItemToBasket(tinOfBeans);
-    basket.removeAllItemsFromBasket();
+    basket.emptyBasket();
     assertEquals(0, basket.getTotalItemCount());
   }
 

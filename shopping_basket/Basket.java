@@ -39,7 +39,7 @@ public class Basket {
     items.remove(item);
   }
 
-  public void removeAllItemsFromBasket() {
+  public void emptyBasket() {
     items.clear();
   }
 

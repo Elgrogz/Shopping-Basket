@@ -46,7 +46,8 @@ public class Customer {
     return basket.getTotalItemCount();
   }
 
-  // public void checkout() {
-  //   this.funds - 
-  // }
+  public void checkout() {
+    this.funds -= basket.getBasketTotalValue();
+    basket.emptyBasket();
+  }
 }
