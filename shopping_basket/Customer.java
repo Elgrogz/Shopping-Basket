@@ -7,10 +7,14 @@ public class Customer {
   boolean hasLoyaltyCard;
   Basket basket;
 
-  public Customer(String name, int funds, boolean hasLoyaltyCard){
+  public Customer(String name, boolean hasLoyaltyCard){
     this.name = name;
-    this.funds = funds;
+    this.funds = 100;
     this.hasLoyaltyCard = hasLoyaltyCard;
     this.basket = new Basket();
   } 
+
+  public String getName() {
+    return this.name;
+  }
 }

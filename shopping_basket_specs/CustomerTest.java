@@ -8,17 +8,19 @@ public class CustomerTest {
   Toothbrush toothbrush;
   TinOfBeans tinOfBeans;
   Basket basket;
+  Customer customer;
 
   @Before
   public void before() {
     toothbrush = new Toothbrush();
     tinOfBeans = new TinOfBeans();
     basket = new Basket();
+    customer = new Customer("El Grogz", true);
   }
   
   @Test
   public void canGetName() {
-    
+    assertEquals("El Grogz", customer.getName());
   } 
 
   @Test

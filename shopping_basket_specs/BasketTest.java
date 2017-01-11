@@ -68,4 +68,23 @@ public class BasketTest {
     assertEquals(14.0, basket.getBasketTotalValue(), 0.1);
   }
 
+  @Test
+  public void canCalculateTotalCostOfBasketOverTwentyPounds() {
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(toothbrush);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    basket.addItemToBasket(tinOfBeans);
+    assertEquals(22.5, basket.getBasketTotalValue(), 0.1);
+  }
+
 }

@@ -69,7 +69,7 @@ public class Basket {
         bogofItems.put(key, bogofItems.get(key) - 1);
       }
     }
-    
+
     for (Item key : bogofItems.keySet()) {
       amountDeducted += ((key.getCost() / 2) * bogofItems.get(key)); 
     }
@@ -83,6 +83,11 @@ public class Basket {
     }
 
     totalValue -= getValueOfBogofDiscount();
+
+    //calculates when to apply 10% off
+    if (totalValue > 20.0) {
+      totalValue *= 0.9;
+    }
     return totalValue;
   }
 
