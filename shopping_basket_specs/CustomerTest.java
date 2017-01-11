@@ -25,18 +25,31 @@ public class CustomerTest {
 
   @Test
   public void canSetName() {
-    
+    customer.setName("Jim");
+    assertEquals("Jim", customer.getName());
   } 
 
   @Test
   public void canGetFunds() {
-    
+    assertEquals(100, customer.getFunds());
   } 
 
   @Test
   public void canSetFunds() {
-    
+    customer.setFunds(50);
+    assertEquals(50, customer.getFunds());
   }
+
+  @Test
+  public void canGetLoyaltyCardStatus() {
+    assertEquals(true, customer.getLoyaltyCardStatus());
+  } 
+
+  // @Test
+  // public void canSetLoyaltyCardStatus() {
+  //   customer.setFunds(50);
+  //   assertEquals(50, customer.getFunds());
+  // }
 
   @Test
   public void canDeductFunds() {

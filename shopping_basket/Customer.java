@@ -11,10 +11,34 @@ public class Customer {
     this.name = name;
     this.funds = 100;
     this.hasLoyaltyCard = hasLoyaltyCard;
-    this.basket = new Basket();
+    basket = new Basket();
   } 
 
   public String getName() {
     return this.name;
   }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getFunds() {
+    return this.funds;
+  }
+
+  public void setFunds(int funds) {
+    this.funds = funds;
+  }
+
+  public boolean getLoyaltyCardStatus() {
+    return this.hasLoyaltyCard;
+  }
+
+  public void setLoyaltyCardStatus(boolean hasLoyaltyCard) {
+    this.hasLoyaltyCard = hasLoyaltyCard;
+  }
+
+  // public void checkout() {
+  //   this.funds - 
+  // }
 }
