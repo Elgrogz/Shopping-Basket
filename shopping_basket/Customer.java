@@ -38,6 +38,14 @@ public class Customer {
     this.hasLoyaltyCard = hasLoyaltyCard;
   }
 
+  public void addItemToBasket(Item item) {
+    basket.addItemToBasket(item);
+  }
+
+  public int getItemCountInBasket() {
+    return basket.getTotalItemCount();
+  }
+
   // public void checkout() {
   //   this.funds - 
   // }

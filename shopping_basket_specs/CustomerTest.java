@@ -14,7 +14,6 @@ public class CustomerTest {
   public void before() {
     toothbrush = new Toothbrush();
     tinOfBeans = new TinOfBeans();
-    basket = new Basket();
     customer = new Customer("El Grogz", true);
   }
   
@@ -45,11 +44,18 @@ public class CustomerTest {
     assertEquals(true, customer.getLoyaltyCardStatus());
   } 
 
-  // @Test
-  // public void canSetLoyaltyCardStatus() {
-  //   customer.setFunds(50);
-  //   assertEquals(50, customer.getFunds());
-  // }
+  @Test
+  public void canSetLoyaltyCardStatus() {
+    customer.setLoyaltyCardStatus(false);
+    assertEquals(false, customer.getLoyaltyCardStatus());
+  }
+
+  @Test
+  public void canAddToBasket() {
+    customer.addItemToBasket(toothbrush);
+    customer.addItemToBasket(tinOfBeans);
+    assertEquals(2, customer.getItemCountInBasket());
+  }
 
   @Test
   public void canDeductFunds() {
